@@ -1,0 +1,8 @@
+name:  bBasic
+version:  1.0
+main:  me.brawl.Main.Main
+commands:
+   kick:
+     permission: brawl.kick
+   ban:
+     permission: brawl.ban
