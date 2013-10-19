@@ -3,6 +3,7 @@ package me.brawl.Main;
 import me.brawl.Commands.Ban;
 import me.brawl.Commands.Kick;
 import me.brawl.Commands.Message;
+import me.brawl.Commands.Vanish;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
@@ -14,6 +15,7 @@ public class Main extends JavaPlugin implements Listener {
 	private Kick executor1;
 	private Ban executor2;
 	private Message executor3;
+	private Vanish executor4;
 	
 	public void onEnable() {
 		
@@ -27,6 +29,9 @@ public class Main extends JavaPlugin implements Listener {
 		
 		executor3 = new Message(this);
 		getCommand("msg").setExecutor(executor3);
+		
+		executor4 = new Vanish(this);
+		getCommand("vanish").setExecutor(executor4);
 		
 }
 }
