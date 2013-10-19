@@ -10,3 +10,5 @@ commands:
      permission: brawl.msg
    vanish:
      permission: brawl.vanish
+   admin:
+     permission: brawl.admin

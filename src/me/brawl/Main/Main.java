@@ -1,5 +1,6 @@
 package me.brawl.Main;
 
+import me.brawl.Commands.Admin;
 import me.brawl.Commands.Ban;
 import me.brawl.Commands.Kick;
 import me.brawl.Commands.Message;
@@ -16,6 +17,7 @@ public class Main extends JavaPlugin implements Listener {
 	private Ban executor2;
 	private Message executor3;
 	private Vanish executor4;
+	private Admin executor5;
 	
 	public void onEnable() {
 		
@@ -32,6 +34,10 @@ public class Main extends JavaPlugin implements Listener {
 		
 		executor4 = new Vanish(this);
 		getCommand("vanish").setExecutor(executor4);
+		
+		executor5 = new Admin(this);
+		getCommand("admin").setExecutor(executor5);
+		
 		
 }
 }
