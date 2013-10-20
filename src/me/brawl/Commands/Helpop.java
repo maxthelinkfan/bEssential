@@ -3,12 +3,10 @@ package me.brawl.Commands;
 
 import me.brawl.Main.Main;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
 public class Helpop implements CommandExecutor, Listener {
@@ -37,7 +35,6 @@ public class Helpop implements CommandExecutor, Listener {
             message2.append(args[0]);
             for (int i = 1; i < args.length; i++) {
             message2.append(" ");
-            message2.append(args[i]);
             }
            
 		

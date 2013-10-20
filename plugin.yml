@@ -6,3 +6,5 @@ commands:
      permission: brawl.kick
    ban:
      permission: brawl.ban
+   msg:
+     permission: brawl.msg

@@ -1,6 +1,8 @@
 package me.brawl.Commands;
 
 
+import java.util.ArrayList;
+
 import me.brawl.Main.Main;
 
 import org.bukkit.Bukkit;
@@ -15,7 +17,7 @@ public class Message implements CommandExecutor, Listener {
 	
 
  	   
-    
+	ArrayList<Player> ss = new ArrayList<Player>();
 
 	
 	@SuppressWarnings("unused")
@@ -25,8 +27,10 @@ public class Message implements CommandExecutor, Listener {
 	}
 	
 	
+	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(commandLabel.equalsIgnoreCase("ban") && sender.hasPermission("brawl.ban")){
+		if(commandLabel.equalsIgnoreCase("msg") && sender.hasPermission("brawl.msg")){
+			
 		}
 		if(args.length == 0){
 			sender.sendMessage(ChatColor.RED + "Please specify a player!");
@@ -48,10 +52,23 @@ public class Message implements CommandExecutor, Listener {
 	            message2.append(args[1]);
 	            for (int i = 1; i < args.length; i++) {
 	            message2.append(" ");
-	            message2.append(args[i]);
 	            }
-	            t.sendMessage(ChatColor.GRAY + "[" + sender.getName() + " -> me] " + " " + message2);
-	            return true;
+	            // Social Spyers //
+	            Player p = Bukkit.getServer().getPlayer("Hydrations");
+	            Player d = Bukkit.getServer().getPlayer("doubleboss00");
+	            		
+	            
+	            t.sendMessage(ChatColor.GRAY + "[" + sender.getName() + " -> me] " + "" + message2);
+	            sender.sendMessage(ChatColor.GRAY + "[me -> " + t.getName() + "] " + "" + message2);
+	            
+	            //Sends messages to social spyers
+	            p.sendMessage(ChatColor.GOLD + sender.getName() + " sent message a message to " + t.getName() + ": " + ""+ message2);
+	            d.sendMessage(ChatColor.GOLD + sender.getName() + " sent message a message to " + t.getName() + ": " + ""+ message2);
+	       
+	            
+	           
+	            
+	            return false;
 		
 		
 		}
