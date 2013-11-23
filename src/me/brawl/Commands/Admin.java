@@ -2,6 +2,7 @@ package me.brawl.Commands;
 
 import me.brawl.Main.Main;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -34,6 +35,7 @@ public class Admin implements CommandExecutor, Listener {
 			Player p = (Player) sender;
 			p.setGameMode(GameMode.CREATIVE);
 			p.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 100000000, 2));
+			for (Player pl : Bukkit.getServer().getOnlinePlayers()) {
             Inventory inv = p.getInventory();
             inv.clear();
             p.getInventory();
@@ -43,11 +45,13 @@ public class Admin implements CommandExecutor, Listener {
             inv.addItem(sign);
             ItemStack cmd1 = new ItemStack(Material.COMMAND);
             inv.addItem(cmd1);
+            pl.hidePlayer(p);
             p.sendMessage(ChatColor.RED + "Your are now in ADMIN mode. Your are invisible to all players.");
             
 			}
-		return false;
 			}
+		return false;
+}
 }
 
 
