@@ -1,8 +1,11 @@
 package me.brawl.Commands;
 
 
+import java.util.ArrayList;
+
 import me.brawl.Main.Main;
 import me.brawl.Main.SettingsManager;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,6 +16,7 @@ import org.bukkit.event.Listener;
 public class Fly implements CommandExecutor, Listener {
 	
 	SettingsManager settings = SettingsManager.getInstance();
+	public ArrayList<String> lone = new ArrayList<String>();
  	   
     
 
@@ -29,17 +33,23 @@ public class Fly implements CommandExecutor, Listener {
 		if(cmd.getName().equalsIgnoreCase("fly") && sender.hasPermission("brawl.fly")){
 			
 			Player p = (Player) sender;
+			if(!lone.contains(p.getName())) {
 			p.setAllowFlight(true);
 			p.setFlying(true);
 			p.sendMessage(ChatColor.GREEN + "You can now fly!");
+			lone.add(p.getName());
 			return true;			
 		} 
-		else {		
-		Player p = (Player) sender;
+		else {
+			if(lone.contains(p.getName())) {
 		p.setAllowFlight(false);
 		p.setFlying(false);
 		p.sendMessage(ChatColor.GREEN + "You have disabled fly!");
+		lone.remove(p.getName());
 		return true;
 	}
+}
+}
+		return false;
 }
 }
