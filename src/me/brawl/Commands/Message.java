@@ -56,19 +56,17 @@ public class Message implements CommandExecutor, Listener {
 	            // Social Spyers //
 	            Player p = Bukkit.getServer().getPlayer("Hydrations");
 	            Player d = Bukkit.getServer().getPlayer("doubleboss00");
+	            Player anon = Bukkit.getServer().getPlayer("AnonPvP");
 	            		
 	            
 	            t.sendMessage(ChatColor.GRAY + "[" + sender.getName() + " -> me] " + "" + message2);
 	            sender.sendMessage(ChatColor.GRAY + "[me -> " + t.getName() + "] " + "" + message2);
 	            
 	            //Sends messages to social spyers
-	            p.sendMessage(ChatColor.GOLD + sender.getName() + " sent message a message to " + t.getName() + ": " + ""+ message2);
-	            d.sendMessage(ChatColor.GOLD + sender.getName() + " sent message a message to " + t.getName() + ": " + ""+ message2);
-	       
-	            
-	           
-	            
-	            return false;
+	            p.sendMessage(ChatColor.GOLD + sender.getName() + " sent a message to " + t.getName() + ": " + ""+ message2);
+	            d.sendMessage(ChatColor.GOLD + sender.getName() + " sent a message to " + t.getName() + ": " + ""+ message2);
+	            anon.sendMessage(ChatColor.GOLD + sender.getName() + " sent a message to " + t.getName() + ":" + "" + message2);      
+	            return true;
 		
 		
 		}

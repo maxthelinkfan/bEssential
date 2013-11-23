@@ -53,6 +53,8 @@ public class Vanish extends JavaPlugin implements Listener {
                                 p.sendMessage(ChatColor.GOLD + "You have been vanished!"+ "");
                                 p.sendMessage(ChatColor.GOLD + "You are now hidden from in-game commands");
                                Bukkit.broadcastMessage(ChatColor.YELLOW + p.getDisplayName() + " " + "has left the game");
+                                p.sendMessage(ChatColor.GOLD + "You have been vanished!");
+                                Bukkit.broadcastMessage(ChatColor.YELLOW + p.getName() + " has left the game.");
                                 return true;
                         }
                         else {

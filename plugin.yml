@@ -10,5 +10,12 @@ commands:
      permission: brawl.msg
    vanish:
      permission: brawl.vanish
+<<<<<<< HEAD
    admin:
      permission: brawl.admin
+=======
+   whois:
+     permission: brawl.whois
+   fly:
+     permission: brawl.fly
+>>>>>>> Adds alot.
