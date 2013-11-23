@@ -25,10 +25,10 @@ public class Feed implements CommandExecutor, Listener {
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("fly") && sender.hasPermission("brawl.feed")){
+		if(cmd.getName().equalsIgnoreCase("feed") && sender.hasPermission("brawl.feed")){
 			Player p = (Player) sender;
 			p.setFoodLevel(20);
-			p.sendMessage(ChatColor.GREEN + "You have killed your apitite!");
+			p.sendMessage(ChatColor.GREEN + "Your appetite was sated.");
 			return true;
 			
 		}
