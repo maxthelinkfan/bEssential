@@ -8,3 +8,9 @@ commands:
      permission: brawl.ban
    msg:
      permission: brawl.msg
+   vanish:
+     permission: brawl.vanish
+   whois:
+     permission: brawl.whois
+   fly:
+     permission: brawl.fly
