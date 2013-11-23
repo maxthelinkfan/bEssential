@@ -2,9 +2,11 @@ package me.brawl.Main;
 
 import me.brawl.Commands.Admin;
 import me.brawl.Commands.Ban;
+import me.brawl.Commands.Day;
 import me.brawl.Commands.Fly;
 import me.brawl.Commands.Kick;
 import me.brawl.Commands.Message;
+import me.brawl.Commands.Night;
 import me.brawl.Commands.Vanish;
 import me.brawl.Commands.Whois;
 import me.brawl.events.BanKickEvent;
@@ -27,6 +29,8 @@ public class Main extends JavaPlugin implements Listener {
  private Whois executor5;
  private Fly executor6;
  private Admin executor7;
+ private Day executor8;
+ private Night executor9;
 
  
  private BanKickEvent event = new BanKickEvent(this);
@@ -70,6 +74,12 @@ public class Main extends JavaPlugin implements Listener {
   
   executor6 = new Fly(this);
   getCommand("fly").setExecutor(executor6);
+  
+  executor8 = new Day(this);
+  getCommand("day").setExecutor(executor8);
+  
+  executor9 = new Night(this);
+  getCommand("night").setExecutor(executor9);
   
   
   PluginManager event = getServer().getPluginManager();

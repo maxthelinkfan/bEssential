@@ -10,19 +10,17 @@ commands:
      permission: brawl.msg
    vanish:
      permission: brawl.vanish
-<<<<<<< HEAD
    whois:
      permission: brawl.whois
    fly:
      permission: brawl.fly
-=======
-<<<<<<< HEAD
    admin:
      permission: brawl.admin
-=======
    whois:
      permission: brawl.whois
    fly:
      permission: brawl.fly
->>>>>>> Adds alot.
->>>>>>> ed57150251af5a73bebf58037c3a2b3b44be0c5c
+   day:
+     permission: brawl.time
+   night:
+     permission: brawl.time
