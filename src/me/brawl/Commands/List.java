@@ -29,21 +29,25 @@ SettingsManager settings = SettingsManager.getInstance();
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("list")){
-			Player p = (Player)sender;						
-			p.sendMessage(ChatColor.GOLD + "Currently Online Players: " + "" + Bukkit.getServer().getOnlinePlayers().length + "/120");
-			StringBuilder str = new StringBuilder();
-            for(Player ps : Bukkit.getOnlinePlayers()){
-                if(str.length() > 0){
-                    str.append(", ");
-                }
-                str.append("§a" + ps.getName() + "§7");
-            }
-            p.sendMessage(str.toString()); // s = CommandSende
-			
-		}
+        if(cmd.getName().equalsIgnoreCase("list")){
+                Player p = (Player)sender;                                             
+                p.sendMessage(ChatColor.GOLD + "Currently Online Players: " + "" + Bukkit.getServer().getOnlinePlayers().length + "/120");
+                StringBuilder str = new StringBuilder();
+    for(Player ps : Bukkit.getOnlinePlayers()){
+        if(str.length() > 0){
+            str.append(", ");
+        }
+        str.append("§a" + ps.getName() + "§7");
+   
+        if(ps.isOp()) {
+                str.append("§9" + ps.getName() + "§7");
+        }
+    }
+    p.sendMessage(str.toString()); // s = CommandSende
+               
+        }
 
 
-		return false;
+        return false;
 }
 }
