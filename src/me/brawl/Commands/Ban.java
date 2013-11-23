@@ -38,7 +38,7 @@ public class Ban implements CommandExecutor, Listener {
 						if(args[0].equalsIgnoreCase(target.getName())){
 							StringBuilder message2 = new StringBuilder();
 				            message2.append(args[1]);
-				            for (int i = 1; i < args.length; i++) {
+				            for (int i = 1; i < args.length;) {
 				            message2.append(" ");
 				            target.kickPlayer(" " + message2);
 				            Bukkit.broadcastMessage(ChatColor.RED + sender.getName() + ChatColor.GOLD + " has banned " + target.getName() + " for " + message2);

@@ -29,7 +29,6 @@ SettingsManager settings = SettingsManager.getInstance();
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-<<<<<<< HEAD
         if(cmd.getName().equalsIgnoreCase("list")){
                 Player p = (Player)sender;                                             
                 p.sendMessage(ChatColor.GOLD + "Currently Online Players: " + "" + Bukkit.getServer().getOnlinePlayers().length + "/120");
@@ -47,7 +46,6 @@ SettingsManager settings = SettingsManager.getInstance();
     p.sendMessage(str.toString()); // s = CommandSende
                
         }
-=======
 		if(cmd.getName().equalsIgnoreCase("list")){
 			Player p = (Player) sender;						
 			p.sendMessage(ChatColor.GOLD + "Currently Online Players: " + "" + Bukkit.getServer().getOnlinePlayers().length + "/120");
@@ -66,7 +64,6 @@ SettingsManager settings = SettingsManager.getInstance();
             p.sendMessage(str.toString());
 			
 		}
->>>>>>> 69a07f59de41173d028feff770316964da9aeb87
 
 
         return false;

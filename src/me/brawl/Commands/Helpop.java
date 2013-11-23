@@ -5,7 +5,6 @@ import me.brawl.Main.Main;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -38,7 +37,11 @@ public class Helpop implements CommandExecutor, Listener {
             message2.append(args[0]);
             for (int i = 1; i < args.length; i++) {
             message2.append(" ");
-            
+            for(Player ps : Bukkit.getOnlinePlayers()){
+            	if(ps.hasPermission("brawl.helpop.receive")){
+            		ps.sendMessage(ChatColor.GRAY + "[" + ChatColor.DARK_RED + "HelpOp" + ChatColor.GRAY + "] " + ChatColor.RED + sender.getName() + ChatColor.BLUE +  " " + message2);
+            	}
+            }
             
             	
             	

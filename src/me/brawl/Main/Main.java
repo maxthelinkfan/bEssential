@@ -3,7 +3,9 @@ package me.brawl.Main;
 import me.brawl.Commands.Admin;
 import me.brawl.Commands.Ban;
 import me.brawl.Commands.Day;
+import me.brawl.Commands.Feed;
 import me.brawl.Commands.Fly;
+import me.brawl.Commands.Helpop;
 import me.brawl.Commands.Kick;
 import me.brawl.Commands.List;
 import me.brawl.Commands.Message;
@@ -37,6 +39,8 @@ public class Main extends JavaPlugin implements Listener {
  private List executor10;
  private Suicide executor11;
  private TP executor12;
+ private Feed executor13;
+ private Helpop executor14;
 
  
  private BanKickEvent event = new BanKickEvent(this);
@@ -95,6 +99,12 @@ public class Main extends JavaPlugin implements Listener {
   
   executor12 = new TP(this);
   getCommand("tp").setExecutor(executor12);
+  
+  executor13 = new Feed(this);
+  getCommand("feed").setExecutor(executor13);
+  
+  executor14 = new Helpop(this);
+  getCommand("helpop").setExecutor(executor14);
   
   
   PluginManager event = getServer().getPluginManager();
