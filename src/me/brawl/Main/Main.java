@@ -8,6 +8,8 @@ import me.brawl.Commands.Kick;
 import me.brawl.Commands.List;
 import me.brawl.Commands.Message;
 import me.brawl.Commands.Night;
+import me.brawl.Commands.Suicide;
+import me.brawl.Commands.TP;
 import me.brawl.Commands.Vanish;
 import me.brawl.Commands.Whois;
 import me.brawl.events.BanKickEvent;
@@ -33,6 +35,8 @@ public class Main extends JavaPlugin implements Listener {
  private Day executor8;
  private Night executor9;
  private List executor10;
+ private Suicide executor11;
+ private TP executor12;
 
  
  private BanKickEvent event = new BanKickEvent(this);
@@ -85,6 +89,12 @@ public class Main extends JavaPlugin implements Listener {
   
   executor10 = new List(this);
   getCommand("list").setExecutor(executor10);
+  
+  executor11 = new Suicide(this);
+  getCommand("suicide").setExecutor(executor11);
+  
+  executor12 = new TP(this);
+  getCommand("tp").setExecutor(executor12);
   
   
   PluginManager event = getServer().getPluginManager();
