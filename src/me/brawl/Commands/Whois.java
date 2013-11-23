@@ -50,6 +50,7 @@ public class Whois implements CommandExecutor, Listener {
 					p.sendMessage(ChatColor.RED + "Location: " + w + ", " + loc + ", " + loc2 + ", " + loc3);
 					p.sendMessage(ChatColor.RED + "Gamemode: " + t.getGameMode());
 					p.sendMessage(ChatColor.RED + "Money: $" + Main.economy.getBalance(t.getName()));
+					p.sendMessage(ChatColor.RED + "XP: " + t.getExpToLevel());
 				}
 			}
 		}
