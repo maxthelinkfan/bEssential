@@ -24,3 +24,5 @@ commands:
      permission: brawl.time
    night:
      permission: brawl.time
+   list:
+     description: List currently online players

@@ -5,6 +5,7 @@ import me.brawl.Commands.Ban;
 import me.brawl.Commands.Day;
 import me.brawl.Commands.Fly;
 import me.brawl.Commands.Kick;
+import me.brawl.Commands.List;
 import me.brawl.Commands.Message;
 import me.brawl.Commands.Night;
 import me.brawl.Commands.Vanish;
@@ -31,6 +32,7 @@ public class Main extends JavaPlugin implements Listener {
  private Admin executor7;
  private Day executor8;
  private Night executor9;
+ private List executor10;
 
  
  private BanKickEvent event = new BanKickEvent(this);
@@ -80,6 +82,9 @@ public class Main extends JavaPlugin implements Listener {
   
   executor9 = new Night(this);
   getCommand("night").setExecutor(executor9);
+  
+  executor10 = new List(this);
+  getCommand("list").setExecutor(executor10);
   
   
   PluginManager event = getServer().getPluginManager();
