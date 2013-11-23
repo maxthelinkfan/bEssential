@@ -1,5 +1,7 @@
 package me.brawl.Commands;
 
+import java.util.ArrayList;
+
 import me.brawl.Main.Main;
 import me.brawl.Main.SettingsManager;
 
@@ -16,7 +18,6 @@ public class List implements CommandExecutor, Listener{
 SettingsManager settings = SettingsManager.getInstance();
  	   
     
-
 	
 	@SuppressWarnings("unused")
 	private Main plugin;
@@ -29,10 +30,13 @@ SettingsManager settings = SettingsManager.getInstance();
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("list")){
 			Player p = (Player)sender;
+			for (Player list : Bukkit.getOnlinePlayers()) {
 			p.sendMessage(ChatColor.GOLD + "Currently Online Players: " + "" + Bukkit.getServer().getOnlinePlayers().length + "/120");
-			
+			p.sendMessage(ChatColor.GREEN + "" + list.getDisplayName());
 			
 		}
-		return false;
+
 	}
+		return false;
+}
 }
