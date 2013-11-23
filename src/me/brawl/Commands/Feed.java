@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-public class Suicide implements CommandExecutor, Listener {
+public class Feed implements CommandExecutor, Listener {
 	
 	SettingsManager settings = SettingsManager.getInstance();
  	   
@@ -18,18 +18,21 @@ public class Suicide implements CommandExecutor, Listener {
 	
 	@SuppressWarnings("unused")
 	private Main plugin;
-	public Suicide(Main plugin) {
+	public Feed(Main plugin) {
 		this.plugin = plugin;
 	}
 	
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("suicide")){
+		if(cmd.getName().equalsIgnoreCase("fly") && sender.hasPermission("brawl.feed")){
 			Player p = (Player) sender;
-			p.setHealth(0);
-			p.sendMessage(ChatColor.GREEN + "You have ended your life!");
+			p.setFoodLevel(20);
+			p.sendMessage(ChatColor.GREEN + "You have killed your apitite!");
+			return true;
+			
 		}
 		return false;
 	}
 }
+		

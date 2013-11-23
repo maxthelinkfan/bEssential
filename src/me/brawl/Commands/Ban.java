@@ -28,7 +28,7 @@ public class Ban implements CommandExecutor, Listener {
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("ban")){
+		if(cmd.getName().equalsIgnoreCase("ban") && sender.hasPermission("brawl.ban")){
 			if(args.length <= 0){
 				sender.sendMessage(ChatColor.RED + "Please specify a player!");
 				return true;
