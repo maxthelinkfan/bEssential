@@ -1,5 +1,6 @@
 package me.brawl.Main;
 
+import me.brawl.Commands.Admin;
 import me.brawl.Commands.Ban;
 import me.brawl.Commands.Fly;
 import me.brawl.Commands.Kick;
@@ -25,6 +26,10 @@ public class Main extends JavaPlugin implements Listener {
 	private Vanish executor4;
 	private Whois executor5;
 	private Fly executor6;
+<<<<<<< HEAD
+=======
+	private Admin executor7;
+>>>>>>> ed57150251af5a73bebf58037c3a2b3b44be0c5c
 	
 	private BanKickEvent event = new BanKickEvent(this);
 	
@@ -59,6 +64,12 @@ public class Main extends JavaPlugin implements Listener {
 		executor4 = new Vanish(this);
 		getCommand("vanish").setExecutor(executor4);
 		
+<<<<<<< HEAD
+=======
+		executor7 = new Admin(this);
+		getCommand("admin").setExecutor(executor7);
+		
+>>>>>>> ed57150251af5a73bebf58037c3a2b3b44be0c5c
 		executor5 = new Whois(this);
 		getCommand("whois").setExecutor(executor5);
 		
