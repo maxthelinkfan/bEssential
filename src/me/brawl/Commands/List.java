@@ -29,15 +29,10 @@ SettingsManager settings = SettingsManager.getInstance();
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("list")){
 			Player p = (Player)sender;
-			Player[] names = Bukkit.getServer().getOnlinePlayers();
 			p.sendMessage(ChatColor.GOLD + "Currently Online Players: " + "" + Bukkit.getServer().getOnlinePlayers().length + "/120");
-			p.sendMessage(ChatColor.GOLD + "" + names);
 			
 			
 		}
 		return false;
-	
-	
-	
-}
+	}
 }
