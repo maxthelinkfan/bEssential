@@ -17,55 +17,40 @@ public class List implements CommandExecutor, Listener{
 
 SettingsManager settings = SettingsManager.getInstance();
  ArrayList<String> blist = new ArrayList<String>();
- 	   
+     
     
-	
-	@SuppressWarnings("unused")
-	private Main plugin;
-	public List(Main plugin) {
-		this.plugin = plugin;
-	}
-	
-	
-	
-	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+ 
+ @SuppressWarnings("unused")
+ private Main plugin;
+ public List(Main plugin) {
+  this.plugin = plugin;
+ }
+ 
+ 
+ 
+ public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if(cmd.getName().equalsIgnoreCase("list")){
-                Player p = (Player)sender;                                             
+                Player p = (Player) sender;                                             
                 p.sendMessage(ChatColor.GOLD + "Currently Online Players: " + "" + Bukkit.getServer().getOnlinePlayers().length + "/120");
                 StringBuilder str = new StringBuilder();
     for(Player ps : Bukkit.getOnlinePlayers()){
         if(str.length() > 0){
             str.append(", ");
         }
+        if(ps.isOp()) {
+            str.append("§9" + ps.getName() + "§7");
+        } else {
+         
         str.append("§a" + ps.getName() + "§7");
    
-        if(ps.isOp()) {
-                str.append("§9" + ps.getName() + "§7");
+        
         }
     }
     p.sendMessage(str.toString()); // s = CommandSende
-               
-        }
-		if(cmd.getName().equalsIgnoreCase("list")){
-			Player p = (Player) sender;						
-			p.sendMessage(ChatColor.GOLD + "Currently Online Players: " + "" + Bukkit.getServer().getOnlinePlayers().length + "/120");
-			StringBuilder str = new StringBuilder();
-            for(Player ps : Bukkit.getOnlinePlayers()){
-                if(str.length() > 0){
-                    str.append(", ");
-                }
-                if(ps.isOp()) {
-                	str.append("§c" + ps.getName() + "§7");
-                } else {
-                str.append("§a" + ps.getName() + "§7");
-           
-                }
-            }
-            p.sendMessage(str.toString());
-			
-		}
+    return true;
 
 
-        return false;
+}
+  return false;
 }
 }
