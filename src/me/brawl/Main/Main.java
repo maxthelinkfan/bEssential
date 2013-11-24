@@ -205,9 +205,6 @@ public class Main extends JavaPlugin implements Listener {
      event.registerEvents(this.event, this);
  }
  
- // CHAT FORMATS \\
-     
- // OP Chat Format
      
        
 

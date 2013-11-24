@@ -17,18 +17,18 @@ public class List implements CommandExecutor, Listener{
 
 SettingsManager settings = SettingsManager.getInstance();
  ArrayList<String> blist = new ArrayList<String>();
-     
+ 	   
     
- 
- @SuppressWarnings("unused")
- private Main plugin;
- public List(Main plugin) {
-  this.plugin = plugin;
- }
- 
- 
- 
- public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+	
+	@SuppressWarnings("unused")
+	private Main plugin;
+	public List(Main plugin) {
+		this.plugin = plugin;
+	}
+	
+	
+	
+	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if(cmd.getName().equalsIgnoreCase("list")){
                 Player p = (Player) sender;                                             
                 p.sendMessage(ChatColor.GOLD + "Currently Online Players: " + "" + Bukkit.getServer().getOnlinePlayers().length + "/120");
@@ -40,11 +40,7 @@ SettingsManager settings = SettingsManager.getInstance();
         if(ps.isOp()) {
             str.append("§9" + ps.getName() + "§7");
         } else {
-<<<<<<< HEAD
-         
-=======
         	
->>>>>>> 240a617b824feaa1cc68d679a432298ee829dd6e
         str.append("§a" + ps.getName() + "§7");
    
         
@@ -55,10 +51,6 @@ SettingsManager settings = SettingsManager.getInstance();
 
 
 }
-<<<<<<< HEAD
-  return false;
-=======
 		return false;
->>>>>>> 240a617b824feaa1cc68d679a432298ee829dd6e
 }
 }
