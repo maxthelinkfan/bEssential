@@ -40,7 +40,11 @@ SettingsManager settings = SettingsManager.getInstance();
         if(ps.isOp()) {
             str.append("§9" + ps.getName() + "§7");
         } else {
+<<<<<<< HEAD
          
+=======
+        	
+>>>>>>> 240a617b824feaa1cc68d679a432298ee829dd6e
         str.append("§a" + ps.getName() + "§7");
    
         
@@ -51,6 +55,10 @@ SettingsManager settings = SettingsManager.getInstance();
 
 
 }
+<<<<<<< HEAD
   return false;
+=======
+		return false;
+>>>>>>> 240a617b824feaa1cc68d679a432298ee829dd6e
 }
 }
