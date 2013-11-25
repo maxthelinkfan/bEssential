@@ -38,11 +38,11 @@ SettingsManager settings = SettingsManager.getInstance();
             str.append(", ");
         }
         if(ps.isOp()) {
-            str.append("§9" + ps.getName() + "§7");
+            str.append("§c" + ps.getName() + "§7");
         } else {
         	
-        str.append("§a" + ps.getName() + "§7");
-   
+        str.append("§f" + ps.getName() + "§7");
+        
         
         }
     }

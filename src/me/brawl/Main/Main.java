@@ -1,31 +1,21 @@
 package me.brawl.Main;
 
-import me.brawl.Commands.Admin;
-import me.brawl.Commands.Ban;
-import me.brawl.Commands.Day;
-import me.brawl.Commands.Feed;
-import me.brawl.Commands.Fly;
-import me.brawl.Commands.Helpop;
-import me.brawl.Commands.Kick;
-import me.brawl.Commands.List;
-import me.brawl.Commands.Message;
-import me.brawl.Commands.Night;
-import me.brawl.Commands.Suicide;
-import me.brawl.Commands.TP;
-import me.brawl.Commands.Vanish;
-import me.brawl.Commands.Whois;
+import me.brawl.Commands.*;
 import me.brawl.events.BanKickEvent;
 import net.milkbowl.vault.economy.Economy;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.AsyncPlayerPreLoginEvent; 
+import org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.kitteh.tag.PlayerReceiveNameTagEvent;
 
 public class Main extends JavaPlugin implements Listener {
  SettingsManager settings = SettingsManager.getInstance();
@@ -115,27 +105,60 @@ public class Main extends JavaPlugin implements Listener {
  
  // END OF CHAT EVENTS \\
 
+ 
+ // TAG EVENTS \\
+ @EventHandler
+ public void onNameTag(PlayerReceiveNameTagEvent event) {
+ if (event.getNamedPlayer().getName().equals("AnonPvP")) {
+ event.setTag(ChatColor.RED + "" + event.getNamedPlayer().getName());
+ }
+ }
+ @EventHandler
+ public void onNameTag1(PlayerReceiveNameTagEvent event) {
+ if (event.getNamedPlayer().getName().equals("Hydrations")) {
+ event.setTag(ChatColor.RED + "Hydrations");
+ }
+ }
+ @EventHandler
+ public void onNameTagMod(PlayerReceiveNameTagEvent event) {
+	 Player p = event.getNamedPlayer();
+ if(p.hasPermission("brawl.modtag")) {
+	 if(!p.isOp()) {
+ event.setTag(ChatColor.DARK_PURPLE + p.getName());
+ }
+ }
+ }
+ @SuppressWarnings("deprecation")
+@EventHandler (priority = EventPriority.HIGHEST)
+ public void onPlayerJoin(AsyncPlayerPreLoginEvent e) {
+	 if(e.getResult().equals(Result.KICK_BANNED)) {
+		 e.setKickMessage("Test!");
+	 }
+	 
+ }
 
+	
  
- private Kick executor1;
- private Ban executor2;
- private Message executor3;
- private Vanish executor4;
- private Whois executor5;
- private Fly executor6;
- private Admin executor7;
- private Day executor8;
- private Night executor9;
- private List executor10;
- private Suicide executor11;
- private TP executor12;
- private Feed executor13;
- private Helpop executor14;
  
+ 
+ public Kick executor1;
+ public Ban executor2;
+ public Message executor3;
+ public Vanish executor4;
+ public Whois executor5;
+ public Fly executor6;
+ public Admin executor7;
+ public Day executor8;
+ public Night executor9;
+ public List executor10;
+ public Suicide executor11;
+ public TP executor12;
+ public Feed executor13;
+ public Helpop executor14;
+ public Gamemode executor15;
  
 
- 
- private BanKickEvent event = new BanKickEvent(this);
+
  
   public static Economy economy = null;
   
@@ -199,10 +222,11 @@ public class Main extends JavaPlugin implements Listener {
   executor14 = new Helpop(this);
   getCommand("helpop").setExecutor(executor14);
   
+  executor15 = new Gamemode(this);
+  getCommand("gm").setExecutor(executor15);
   
   
-  PluginManager event = getServer().getPluginManager();
-     event.registerEvents(this.event, this);
+  
  }
  
      

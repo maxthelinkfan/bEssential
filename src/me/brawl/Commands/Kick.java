@@ -40,7 +40,7 @@ public class Kick implements CommandExecutor, Listener {
 				}
 		            
 				if(args.length == 1) {
-					Bukkit.broadcastMessage(ChatColor.GOLD + sender.getName() + " has kicked " + target.getName() + "for " + "breaking the rules!");
+					Bukkit.broadcastMessage(ChatColor.GOLD + sender.getName() + " has kicked " + target.getName() + " for " + "breaking the rules!");
 				target.kickPlayer(ChatColor.RED + "You have been kicked for breaking the rules!");
 				}
 			}

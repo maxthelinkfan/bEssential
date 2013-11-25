@@ -18,12 +18,12 @@ public class Gamemode implements CommandExecutor {
 	}
 	
 	  public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-		    if (cmd.getName().equalsIgnoreCase("gm") && sender.hasPermission("kitpvp.admin")){
+		    if (cmd.getName().equalsIgnoreCase("gm") && sender.hasPermission("brawl.gamemode")){
 		      if (args.length <= 0) {
 		        sender.sendMessage(ChatColor.RED + "Invalid Usage! /gm <0, 1, 2>");
 		        return true;
 		      }
-		      if (args.length > 0) {
+		      else  if (args.length > 0) {
 		    	  if(args[0].equalsIgnoreCase("0")){
 		            Player p = (Player)sender;
 		            p.setGameMode(GameMode.SURVIVAL);
@@ -44,10 +44,7 @@ public class Gamemode implements CommandExecutor {
 		    				  p.sendMessage(ChatColor.GREEN + "Gamemode set to Adventure!");
 		    				  return true;
 		    			  }
-		    		  }
-		            
-		            
-		            return true;
+		    		  }		           
 		          }
 		        }
 		      }

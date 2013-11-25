@@ -42,8 +42,8 @@ public class Ban implements CommandExecutor, Listener {
 				            message2.append(" ");
 				            target.kickPlayer(" " + message2);
 				            Bukkit.broadcastMessage(ChatColor.RED + sender.getName() + ChatColor.GOLD + " has banned " + target.getName() + " for " + message2);
-				            settings.getData().set(".banned " + target.getName() + ".reason", "You have been banned for cheating");
-				            settings.saveData();
+				            target.setBanned(true);
+				            
 				            return true;
 				         
 						}
