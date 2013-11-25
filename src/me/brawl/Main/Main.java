@@ -139,21 +139,22 @@ public class Main extends JavaPlugin implements Listener {
  
  
  
- public Kick executor1;
- public Ban executor2;
- public Message executor3;
- public Vanish executor4;
- public Whois executor5;
- public Fly executor6;
- public Admin executor7;
- public Day executor8;
- public Night executor9;
- public List executor10;
- public Suicide executor11;
- public TP executor12;
- public Feed executor13;
- public Helpop executor14;
- public Gamemode executor15;
+ private Kick executor1;
+ private Ban executor2;
+ private Message executor3;
+ private Vanish executor4;
+ private Whois executor5;
+ private Fly executor6;
+ private Admin executor7;
+ private Day executor8;
+ private Night executor9;
+ private List executor10;
+ private Suicide executor11;
+ private TP executor12;
+ private Feed executor13;
+ private Helpop executor14;
+ private Gm executor15;
+ private Ping executor16;
  
 
 
@@ -220,9 +221,11 @@ public class Main extends JavaPlugin implements Listener {
   executor14 = new Helpop(this);
   getCommand("helpop").setExecutor(executor14);
   
-  executor15 = new Gamemode(this);
+  executor15 = new Gm(this);
   getCommand("gm").setExecutor(executor15);
   
+  executor16 = new Ping(this);
+  getCommand("ping").setExecutor(executor16);
   
   
  }
