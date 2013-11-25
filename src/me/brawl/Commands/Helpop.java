@@ -32,7 +32,7 @@ public class Helpop implements CommandExecutor, Listener {
 			sender.sendMessage(ChatColor.RED + "Please enter a message!");
 			return true;
 		}
-		if(args.length == 1){
+		if(args.length > 0){
             StringBuilder message2 = new StringBuilder();
             message2.append(args[0]);
             for (int i = 1; i < args.length; i++) {

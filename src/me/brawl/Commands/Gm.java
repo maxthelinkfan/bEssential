@@ -19,11 +19,37 @@ public class Gm implements CommandExecutor {
 	
 	  public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		    if (cmd.getName().equalsIgnoreCase("gm") && sender.hasPermission("brawl.gm")){
-		      if (args.length == 0) {
+		      if (args.length <= 0) {
 		        sender.sendMessage(ChatColor.RED + "Invalid Usage! /gm <0, 1, 2>");
 		        return true;
 		      }
-		    }
+		      else  if (args.length > 0) {
+		    	  if(args[0].equalsIgnoreCase("0")){
+		            Player p = (Player)sender;
+		            p.setGameMode(GameMode.SURVIVAL);
+		            p.sendMessage(ChatColor.GREEN + "Gamemode set to Surival!");
+		            return true;
+		    	  }
+		    	  else if (args.length > 0) {
+		    		  if(args[0].equalsIgnoreCase("1")) {
+		    			  Player p = (Player)sender;
+		    			  p.setGameMode(GameMode.CREATIVE);
+		    			  p.sendMessage(ChatColor.GREEN + "Gamemode set to Creative!");
+		    			  return true;
+		    		  }
+		    		  else if(args.length > 0) {
+		    			  if(args[0].equalsIgnoreCase("2")) {
+		    				  Player p = (Player)sender;
+		    				  p.setGameMode(GameMode.ADVENTURE);
+		    				  p.sendMessage(ChatColor.GREEN + "Gamemode set to Adventure!");
+		    				  return true;
+		    			  }
+		    		  }		           
+		          }
+		        }
+		      }
+		    
 			return false;
 	  }
+	  
 }

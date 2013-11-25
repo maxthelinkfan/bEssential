@@ -34,3 +34,7 @@ commands:
      description: brawl.ping
    gm:
      permission: brawl.gm
+   feed:
+     permission: brawl.feed
+   helpop:
+     permission: brawl.helpop
