@@ -1,7 +1,6 @@
 package me.brawl.Main;
 
 import me.brawl.Commands.*;
-import me.brawl.events.BanKickEvent;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,7 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent; 
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.kitteh.tag.PlayerReceiveNameTagEvent;
