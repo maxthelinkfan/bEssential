@@ -38,3 +38,5 @@ commands:
      permission: brawl.feed
    helpop:
      permission: brawl.helpop
+   spawn:
+     description: lolz

@@ -2,6 +2,7 @@ package me.brawl.Main;
 
 import me.brawl.Commands.*;
 import net.milkbowl.vault.economy.Economy;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -11,6 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent; 
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.kitteh.tag.PlayerReceiveNameTagEvent;
@@ -155,9 +157,13 @@ public class Main extends JavaPlugin implements Listener {
  private Helpop executor14;
  private Gm executor15;
  private Ping executor16;
+ private Spawn executor17;
  
+ //events\\
+ private Spawn PlayerListener = new Spawn(this);
 
 
+ 
  
   public static Economy economy = null;
   
@@ -227,8 +233,15 @@ public class Main extends JavaPlugin implements Listener {
   executor16 = new Ping(this);
   getCommand("ping").setExecutor(executor16);
   
+  executor17 = new Spawn(this);
+  getCommand("spawn").setExecutor(executor17);
+  
+  PluginManager event = getServer().getPluginManager();
+  event.registerEvents(this.PlayerListener, this);
+  
   
  }
+ 
  
      
        
