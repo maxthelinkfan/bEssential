@@ -37,6 +37,17 @@ public class Warp implements CommandExecutor, Listener {
 			if(args.length > 0){
 				if(args[0].equalsIgnoreCase("set")){
 					if(sender.hasPermission("brawl.setwarp")){
+						Player p = (Player) sender;
+						return true;						
+					}
+					else if(args.length > 0) {
+						if(args[0].equalsIgnoreCase("delete") || (args[0].equalsIgnoreCase("del"))) {
+							if(sender.hasPermission("brawl.delwarp")){
+								Player p = (Player) sender;								
+							}
+							
+							
+						}
 					}
 					
 				}
