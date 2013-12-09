@@ -5,6 +5,7 @@ import net.milkbowl.vault.economy.Economy;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -12,6 +13,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent; 
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -161,8 +164,9 @@ public class Main extends JavaPlugin implements Listener {
  
  //events\\
  private Spawn PlayerListener = new Spawn(this);
-
-
+ 
+ 
+ 
  
  
   public static Economy economy = null;
@@ -238,6 +242,8 @@ public class Main extends JavaPlugin implements Listener {
   
   PluginManager event = getServer().getPluginManager();
   event.registerEvents(this.PlayerListener, this);
+  
+  
   
   
  }
