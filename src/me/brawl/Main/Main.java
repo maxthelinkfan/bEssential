@@ -5,7 +5,6 @@ import net.milkbowl.vault.economy.Economy;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -13,9 +12,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent; 
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.kitteh.tag.PlayerReceiveNameTagEvent;
@@ -143,27 +139,9 @@ public class Main extends JavaPlugin implements Listener {
 	
  
  
- 
- private Kick executor1;
- private Ban executor2;
- private Message executor3;
- private Vanish executor4;
- private Whois executor5;
- private Fly executor6;
- private Admin executor7;
- private Day executor8;
- private Night executor9;
- private List executor10;
- private Suicide executor11;
- private TP executor12;
- private Feed executor13;
- private Helpop executor14;
- private Gm executor15;
- private Ping executor16;
- private Spawn executor17;
+
  
  //events\\
- private Spawn PlayerListener = new Spawn(this);
  
  
  
@@ -189,59 +167,31 @@ public class Main extends JavaPlugin implements Listener {
   
   settings.setup(this);
   
-  executor1 = new Kick(this);
-  getCommand("kick").setExecutor(executor1);
+  getCommand("admin").setExecutor(new Admin(this));
+  getCommand("ban").setExecutor(new Ban(this));
+  getCommand("day").setExecutor(new Day(this));
+  getCommand("feed").setExecutor(new Feed(this));
+  getCommand("fly").setExecutor(new Fly(this));
+  getCommand("gm").setExecutor(new Gm(this));
+  getCommand("hat").setExecutor(new Hat(this));
+  getCommand("helpop").setExecutor(new Helpop(this));
+  getCommand("i").setExecutor(new I(this));
+  getCommand("kick").setExecutor(new Kick(this));
+  getCommand("list").setExecutor(new List(this));
+  getCommand("message").setExecutor(new Message(this));
+  getCommand("more").setExecutor(new More(this));
+  getCommand("night").setExecutor(new Night(this));
+  getCommand("ping").setExecutor(new Ping(this));
+  getCommand("spawn").setExecutor(new Spawn(this));
+  getCommand("suicide").setExecutor(new Suicide(this));
+  getCommand("tp").setExecutor(new TP(this));
+  getCommand("tpall").setExecutor(new TPAll(this));
+  getCommand("vanish").setExecutor(new Vanish(this));
+  getCommand("warp").setExecutor(new Warp(this));
+  getCommand("whois").setExecutor(new Whois(this));
+  getCommand("workbench").setExecutor(new Workbench(this));
   
-  executor2 = new Ban(this);
-  getCommand("ban").setExecutor(executor2);
-  
-  executor3 = new Message(this);
-  getCommand("msg").setExecutor(executor3);
-  
-  executor4 = new Vanish(this);
-  getCommand("vanish").setExecutor(executor4);
-
-  executor7 = new Admin(this);
-  getCommand("admin").setExecutor(executor7);
-
-  executor5 = new Whois(this);
-  getCommand("whois").setExecutor(executor5);
-  
-  executor6 = new Fly(this);
-  getCommand("fly").setExecutor(executor6);
-  
-  executor8 = new Day(this);
-  getCommand("day").setExecutor(executor8);
-  
-  executor9 = new Night(this);
-  getCommand("night").setExecutor(executor9);
-  
-  executor10 = new List(this);
-  getCommand("list").setExecutor(executor10);
-  
-  executor11 = new Suicide(this);
-  getCommand("suicide").setExecutor(executor11);
-  
-  executor12 = new TP(this);
-  getCommand("tp").setExecutor(executor12);
-  
-  executor13 = new Feed(this);
-  getCommand("feed").setExecutor(executor13);
-  
-  executor14 = new Helpop(this);
-  getCommand("helpop").setExecutor(executor14);
-  
-  executor15 = new Gm(this);
-  getCommand("gm").setExecutor(executor15);
-  
-  executor16 = new Ping(this);
-  getCommand("ping").setExecutor(executor16);
-  
-  executor17 = new Spawn(this);
-  getCommand("spawn").setExecutor(executor17);
-  
-  PluginManager event = getServer().getPluginManager();
-  event.registerEvents(this.PlayerListener, this);
+  Bukkit.getServer().getPluginManager().registerEvents(new Spawn(this), this);
   
   
   

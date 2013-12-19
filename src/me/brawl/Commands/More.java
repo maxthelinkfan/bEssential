@@ -5,6 +5,7 @@ import me.brawl.Main.Main;
 import me.brawl.Main.SettingsManager;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,6 +27,10 @@ public class More implements CommandExecutor, Listener {
 		this.plugin = plugin;
 	}
 	
+	public void more(Player player) {
+		player.getItemInHand().setAmount(64);
+	}
+	
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -33,6 +38,7 @@ public class More implements CommandExecutor, Listener {
 			Player p = (Player) sender;
 			Inventory inv = p.getInventory();
 			if(p.hasPermission("brawl.more")) {
+			more(p);
 			
 			}
 			

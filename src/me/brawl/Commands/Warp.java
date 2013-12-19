@@ -36,8 +36,10 @@ public class Warp implements CommandExecutor, Listener {
 			if(args.length <= 0) {
 				Player p = (Player) sender;
 				p.sendMessage(ChatColor.RED + "bBasic Warp Commands:");
-				p.sendMessage(ChatColor.GREEN + "/warp set <name> - Set's a warp!");
-				p.sendMessage(ChatColor.GREEN + "/warp <name> - Teleport's you to a preset warp!");
+				p.sendMessage(ChatColor.GREEN + "/warp <ID> - Teleports you to a pre-set warp!");
+				p.sendMessage(ChatColor.GREEN + "/warp set <ID> - Sets a warp!");
+				p.sendMessage(ChatColor.GREEN + "/warp del <ID> - Deletes a warp!");
+		
 				return true;
 			}
 			if(args.length > 0){
