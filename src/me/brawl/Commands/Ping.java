@@ -3,8 +3,6 @@ package me.brawl.Commands;
 
 import me.brawl.Main.Main;
 import me.brawl.Main.SettingsManager;
-
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
